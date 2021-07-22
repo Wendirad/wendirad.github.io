@@ -2,13 +2,19 @@
   font-family: amharic-like;
   src: url("../fonts/amharic-like.ttf");
 }
+/* 
+==================================
+   RULESET for RESPOSIVE DESIGN
+==================================
+*/
+
 * {
   box-sizing: border-box;
   font-family: amharic-like;
   padding: 0;
   margin: 0;
+  cursor: url('path-to-image.png'), auto;
 }
-
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -35,62 +41,77 @@
 .show-xl, .show-sm-up, .show-md-up,
 .show-lg-up, .show-xl-up {display: none;}
 
+/* ====================================== */
+
 .top-header {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	background-image: url("../img/backgrounds/bg_dynamic_2h2.jpg");
-	background-size: auto 50%;
-	background-repeat: repeat-x;
-	background-position: top;
+	justify-content: center;
+	background-image: url("../img/backgrounds/main_bg.jpg");
 }
-
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .profile-img {
 	padding: 0;
-	margin: 0;
-	width: 15rem;
-	float: unset;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: .5rem;
+	width: 10rem;
 	border-radius: 50%;
-	border: .5em #fff solid;
+	border: .25em #fff solid;
 }
-
 .nav-items {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: center;
 	list-style-type: none;
+	padding: .2em;
 }
-
 .btn {
-	padding: .75em .5em;
-	border: .25em #000 double;
-	border-radius: .5em;
+	padding: 0em .25em;
 }
 .icon {
 	width: 2em;
 	height: 2em;
-	vertical-align: middle;
 }
-
 .social-links {
-	/*position: fixed;*/
+	position: fixed;
+	right: 0;
+	top: 40vh;
 	display: inherit;
-	border: 1px red solid;
+	background-color: #fff;
+	border: 1px #000 solid;
+	border-right: none;
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
 }
-.social-items {
-	list-style-type: none;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	height: 15rem;
+.social-links .icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: .75rem;
+	animation: zoom-in-out 2s infinite both ease-in-out;
 }
 
-/* Small devices (portrait tablets and large phones, 576px and up) */
-@media only screen and (min-width: 576px) {
+.social-items {list-style-type: none;}
+.social-item {
+	background: linear-gradient(to bottom, #fff, #eee);
+}
+.social-item:first-child {border-top-left-radius: 1rem;}
+.social-item:last-child {border-bottom-left-radius: 1rem;}
+
+@keyframes zoom-in-out {
+  0% {transform: scale(1.05);}
+  20% {transform: scale(1.075);}
+  40% {transform: scale(1.1);}
+  60% {transform: scale(1.075);}
+  80% {transform: scale(1.05);}
+  100% {transform: scale(1.0);}
+}
+
+/* Small devices (portrait tablets and large phones, 612px and up) */
+@media only screen and (min-width: 612px) {
 	.col-sm-1 {width: 8.33%;}
 	.col-sm-2 {width: 16.66%;}
 	.col-sm-3 {width: 25%;}
@@ -108,20 +129,36 @@
 	.show-md-up, .show-xl-up, .show-lg-up {display: none;}
 
 	.profile-img {
-		float: left;
-		margin-left: 2em;
-		background-size: auto 5em;
-		width: 10em;
+		width: 20rem;
 	}
-	.nav {
-		margin: 0;
-	}
-	.nav-items {
-		/*justify-content: flex-end;*/
-	}
-
 	.top-header {
 		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100vh;
+		background-size: 100% 100%;
+	}
+	.nav {
+		width: 25rem;
+		height: 100vh;
+		background-image: url("../img/backgrounds/brana_rm.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.nav .row {height: 100vh;}
+	.nav-items {
+		margin: .25em;
+		margin-top: 7rem;
+		height: 70vh;
+		flex-direction: column;
+		align-self: center;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	.btn {
+		padding: 1em;
+		margin: 1em;
+		text-shadow: 1em 1em 1em #fff;
 	}
 }
 
@@ -142,6 +179,7 @@
 	.show-md, .show-md-up {display: inherit;}
 	.show-es, .show-sm, .show-lg, .show-xl,
 	.show-lg-up, .show-xl-up {display: none;}
+	.nav-items {margin-bottom: 1.75rem;}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -161,7 +199,6 @@
 	.show-lg, .show-lg-up {display: inherit;}
 	.show-es, .show-md, .show-sm, .show-xl,
 	.show-xl-up {display: none;}
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -180,11 +217,4 @@
 	.col-xl-12 {width: 100%;}
 	.show-xl, .show-xl-up {display: inherit;}
 	.show-es, .show-md, .show-lg, .show-sm {display: none;}
-
-	.profile-img {
-		float: left;
-		margin-left: 2em;
-		background-size: auto 5em;
-		width: 15em;
-	}
 }
