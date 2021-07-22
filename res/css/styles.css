@@ -27,19 +27,16 @@
   display: table;
 }
 
-div {
-	width: 100%;
-}
-
-header {	
+.top-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background-image: url("../img/backgrounds/bg_dynamic_2h2.jpg");
 	background-size: auto 50%;
 	background-repeat: repeat-x;
 	background-position: top;
 }
-nav  {
-	margin:  1em;
-}
+
 .profile-img {
 	padding: 0;
 	margin: 0;
@@ -91,6 +88,16 @@ nav  {
 		margin-left: 2em;
 		background-size: auto 5em;
 		width: 10em;
+	}
+	.nav {
+		margin: 0;
+	}
+	.nav-items {
+		/*justify-content: flex-end;*/
+	}
+
+	.top-header {
+		flex-direction: row;
 	}
 }
 
