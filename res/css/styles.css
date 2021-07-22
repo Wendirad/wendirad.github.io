@@ -13,7 +13,6 @@
   font-family: amharic-like;
   padding: 0;
   margin: 0;
-  cursor: url('path-to-image.png'), auto;
 }
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -52,6 +51,7 @@
 .header {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 }
 .profile-img {
@@ -148,7 +148,7 @@
 	.nav .row {height: 100vh;}
 	.nav-items {
 		margin: .25em;
-		margin-top: 7rem;
+		margin-top: 6rem;
 		height: 70vh;
 		flex-direction: column;
 		align-self: center;
