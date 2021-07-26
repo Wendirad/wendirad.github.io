@@ -2,6 +2,7 @@
   font-family: amharic-like;
   src: url("../fonts/amharic-like.ttf");
 }
+html {scroll-behavior: smooth;}
 /* 
 ==================================
    RULESET for RESPOSIVE DESIGN
@@ -36,8 +37,10 @@
   clear: both;
   display: table;
 }
-.show-sm, .show-md, .show-lg,
-.show-xl, .show-sm-up, .show-md-up,
+.show {display: inherit;}
+.hide {display: none;}
+
+.show-sm, .show-md, .show-lg, .show-xl, .show-sm-up, .show-md-up,
 .show-lg-up, .show-xl-up {display: none;}
 
 /* ====================================== */
@@ -49,6 +52,7 @@
 	background-image: url("../img/backgrounds/main_bg_1.jpg");
 	text-align: center;
 }
+
 .header {
 	display: flex;
 	justify-content: center;
@@ -78,19 +82,67 @@
 	list-style-type: none;
 	padding: .2em;
 }
-.nav-item {
+.nav-item, .nav-item-scroll {
 	border-image: url("../img/backgrounds/bg_dynamic_2h2.jpg") 30 round;
 	border-width: 8px;
 	border-style: solid;
 	width: 30%;
 }
-.btn {
+
+.btn, .btn-scroll {
 	padding: .15em;
 	color: #fff;
+	text-decoration: none;
 }
 .icon {
 	width: 2em;
 	height: 2em;
+}
+.stick-nav {
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	z-index: 10;
+}
+
+.top-header-scroll {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: .2em;
+  background: url("../img/backgrounds/552581.jpg");
+	background-size: cover;
+	
+}
+
+.nav-items-scroll {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+	list-style-type: none;
+}
+.nav-item-scroll {
+	/*width: 30%;*/
+	margin: .1em .25em;
+	border-width: 10px;
+	border-image-repeat: round;
+}
+.header-scroll {
+	padding: .25em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.profile-img-scroll {
+	width: 5em;
+	margin-left: 3em;
+	border-radius: 50%;
+	border: 2px #fff solid;
 }
 .social-links {
 	position: fixed;
@@ -117,6 +169,8 @@
 .social-item:first-child {border-top-left-radius: 1rem;}
 .social-item:last-child {border-bottom-left-radius: 1rem;}
 
+.bg-img {background-attachment: scroll;}
+
 @keyframes zoom-in-out {
   0% {transform: scale(1.05);}
   20% {transform: scale(1.075);}
@@ -125,6 +179,12 @@
   80% {transform: scale(1.05);}
   100% {transform: scale(1.0);}
 }
+
+[class*="bgimg-"]{min-height: 400px;}
+
+.bgimg-1 {background-image: url("../img/backgrounds/bg_paradox_1.jpg");}
+.bgimg-2 {background-image: url("../img/backgrounds/images.jpeg");}
+.bgimg-3 {background-image: url("../img/backgrounds/gojo.jpeg");}
 
 /* Small devices (portrait tablets and large phones, 612px and up) */
 @media only screen and (min-width: 612px) {
@@ -140,7 +200,8 @@
 	.col-sm-10 {width: 83.33%;}
 	.col-sm-11 {width: 91.66%;}
 	.col-sm-12 {width: 100%;}
-	.show-sm, .show-sm-up {display: inherit;}
+	.show-sm, .show-sm-up {display: unset;}
+
 	.show-es, .show-md, .show-lg, .show-xl,
 	.show-md-up, .show-xl-up, .show-lg-up {display: none;}
 
@@ -152,11 +213,10 @@
 		justify-content: space-evenly;
 		align-items: center;
 		height: 100vh;
-		/*background-size: 100% 100%;*/
 		background-attachment: fixed;
-	  background-position: center;
-	  background-repeat: no-repeat;
-	  background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 	.nav {
 		width: 25rem;
@@ -187,6 +247,9 @@
 		text-shadow: 1em 1em 1em #fff;
 		color: #181818;
 	}
+	.btn-scroll {
+		color: #fff;
+	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -207,6 +270,17 @@
 	.show-es, .show-sm, .show-lg, .show-xl,
 	.show-lg-up, .show-xl-up {display: none;}
 	.nav-items {margin-bottom: 1.75rem;}
+	.bg-img {
+		position: relative;
+	  opacity: 0.95;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover
+	}
+	.top-header {
+		opacity: unset;
+	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

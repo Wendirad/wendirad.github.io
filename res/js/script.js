@@ -1,11 +1,13 @@
 let title = document.querySelector('.title');
+let stick_nav = document.querySelector('#stick-nav');
+
 let titles = [
     "Computer Scientist ",
     "Computer Engineer ",
     "Python Developer ",
     "Competitive Programmer ",
     "Web Developer ",
-]
+];
 let title_count = 0;
 
 let set_text = (text, el) => {
@@ -35,6 +37,32 @@ let set_text = (text, el) => {
     )
     
 }
+
 window.addEventListener('DOMContentLoaded', () => {
-    set_text(titles[title_count++ % titles.length], title);    
+    set_text(titles[title_count++ % titles.length], title);
 })
+window.addEventListener('scroll', function(e){
+    var scroll_pos = document.body.scrollTop || document.documentElement.scrollTop;
+    if (scroll_pos > 420){
+        if (stick_nav.classList.contains('hide')){
+            stick_nav.style.opacity = "0";
+            stick_nav.classList.remove('hide');
+        } else {
+            var opc;
+            if (scroll_pos < 500) {
+                opc = ((scroll_pos - 400) / 451) % 1;
+            }
+            else {
+                opc = 1;
+                stick_nav.classList.add('stick-nav');
+            }
+            stick_nav.style.opacity = String(opc);
+        }
+    } else {
+        if (!stick_nav.classList.contains('hide')){
+            stick_nav.classList.add('hide');
+        }
+    }
+
+}
+)  
