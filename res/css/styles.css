@@ -107,6 +107,7 @@ html {scroll-behavior: smooth;}
 	position: sticky;
 	width: 100vw;
 	top: 0;
+	z-index: 1;
 }
 
 .top-header-scroll {
@@ -130,7 +131,6 @@ html {scroll-behavior: smooth;}
 	list-style-type: none;
 }
 .nav-item-scroll {
-	/*width: 30%;*/
 	margin: .1em .25em;
 	border-width: 10px;
 	border-image-repeat: round;
