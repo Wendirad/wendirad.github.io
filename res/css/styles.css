@@ -60,6 +60,7 @@ html {scroll-behavior: smooth;}
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 1em;
+	color: #d1d1d1;
 }
 .profile-img {
 	padding: 0;
@@ -67,6 +68,9 @@ html {scroll-behavior: smooth;}
 	width: 10rem;
 	border-radius: 50%;
 	border: .25em #fff solid;
+	background-image: url("../img/backgrounds/sefed.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .nav {
 	padding-top: .25em;
@@ -189,28 +193,30 @@ article h1 {
 	justify-content: space-between;
 }
 .bg-img {background-attachment: scroll;}
-[class*="bgimg-"] {min-height: 100%;}
 .bgimg-1 {background-image: url("../img/backgrounds/bg_parallax_1_op.jpg");}
 .bgimg-2 {background-image: url("../img/backgrounds/bg_parallax_2_op.jpeg");}
 .bgimg-3 {background-image: url("../img/backgrounds/bg_parallax_3_op.jpg");}
 .bgimg-4 {background-image: url("../img/backgrounds/bg_parallax_4_op.jpeg");}
+.bgimg-5 {background-image: url("../img/backgrounds/bg_parallax_5_op.jpg");}
 
 .side-img {min-height: 35em;}
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+
+[class*="bgimg-"] {
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 400px;
+  min-height: 200px;
 }
 .logo {width: 1em;}
 .small {
 	margin-left: 1em;
 	color: #000;
 }
-.experience h3 {color: #444;}
+.experience h2 {font-size: 1.5em; text-align: left;}
+.experience h3 {color: #444; font-size: 1em;}
 .experience .side-img {min-height: 37em;}
 .experience ul {list-style-type: circle;margin-left: 2em;}
 
@@ -221,8 +227,99 @@ article h1 {
 }
 .skills ul li {
 	margin-left: 1em;
+	list-style-type: square;
 }
 
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color:  rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: .5em;
+}
+
+.modal-header {
+	border-bottom: .1em #010101 solid;
+	padding: .5em;
+	font-family: amharic-like;
+	font-size: 1.5em;
+}
+.gallery-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+	padding: 1em;
+}
+.card-img {
+	width: auto;
+	max-height: 20em;
+	border-radius: 2em;
+}
+.close {
+	font-size: 2em;
+	background-color: red;
+	color: #fff;
+	padding: 0 .25em;
+	border-radius: .25em;
+	float: right;
+}
+.modal-body {
+	display: flex;
+	justify-content: center ;
+}
+.modal-body img {
+	width: 80%;
+	height: 30em;
+	object-fit: cover;
+}
+
+.form-group {
+	display: flex;
+	margin: 1em;
+	flex-direction: column;
+	justify-content: center;
+	width: 70vw;
+}
+.form-group label {color: #0f0f0f;}
+.form-group input, .form-group textarea {
+	padding: .5em;
+}
+.form-group input::placeholder, .form-group textarea::placeholder {
+	font-variant: small-caps;
+}
+.form-group textarea {
+	height: 10em;
+	resize: none;
+}
+.form-group button {
+	width: 10em;
+	padding: .75em;
+	/*margin-left: auto;*/
+	margin-right: auto;
+	border-radius: .25em;
+	background-color: #d1d1d1;
+	outline: none;
+	border-width: 0;
+	font-size: 1em;
+	font-weight: bolder;
+}
 @keyframes zoom-in-out {
   0% {transform: scale(1.05);}
   20% {transform: scale(1.075);}
@@ -250,7 +347,7 @@ article h1 {
 
 	.show-es, .show-md, .show-lg, .show-xl,
 	.show-md-up, .show-xl-up, .show-lg-up {display: none;}
-
+	.show-md-up {display: none;}
 	.profile-img {
 		width: 20rem;
 	}
@@ -329,7 +426,12 @@ article h1 {
 		margin:3em 4em;
 		margin-top: 5em;
 		padding: 2em;
-		width: 60vw;
+	}
+	[class*="bgimg-"] {
+		min-height: 400px;
+	}
+	.gallery-cards {
+		flex-direction: row;
 	}
 }
 
@@ -350,6 +452,15 @@ article h1 {
 	.show-lg, .show-lg-up {display: inherit;}
 	.show-es, .show-md, .show-sm, .show-xl,
 	.show-xl-up {display: none;}
+	article {
+		margin:3em 4em;
+		margin-top: 5em;
+		padding: 2em;
+		width: 60vw;
+	}
+	.form-group {
+		width: 90%;
+	}
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
