@@ -1,8 +1,10 @@
 let title = document.querySelector('.title');
 let stick_nav = document.querySelector('#stick-nav');
-let gallery_modal = document.getElementById("gallery-model");
+let gallery_modal = document.querySelector("#gallery-model");
 let modal_header = document.querySelector('.modal-header');
 let gallery_img = document.querySelector('#gallery-img');
+let social_link = document.querySelector(".social-links");
+let current_year = document.querySelector('#current-year');
 
 let titles = [
     "Computer Scientist ",
@@ -67,10 +69,17 @@ let set_text = (text, el) => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    var date = new Date();
+    current_year.innerText = date.getFullYear();
     set_text(titles[title_count++ % titles.length], title);
 })
 window.addEventListener('scroll', function(e){
     var scroll_pos = document.body.scrollTop || document.documentElement.scrollTop;
+    if (scroll_pos > 5900) {
+        social_link.style.display = "none";
+    } else {
+        social_link.style.display = "block";
+    }
     if (scroll_pos > 420){
         if (stick_nav.classList.contains('hide')){
             stick_nav.style.opacity = "0";

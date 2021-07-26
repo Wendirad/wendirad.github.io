@@ -104,10 +104,9 @@ html {scroll-behavior: smooth;}
 	height: 2em;
 }
 .stick-nav {
-	position: fixed;
+	position: sticky;
 	width: 100vw;
 	top: 0;
-	z-index: 10;
 }
 
 .top-header-scroll {
@@ -198,6 +197,7 @@ article h1 {
 .bgimg-3 {background-image: url("../img/backgrounds/bg_parallax_3_op.jpg");}
 .bgimg-4 {background-image: url("../img/backgrounds/bg_parallax_4_op.jpeg");}
 .bgimg-5 {background-image: url("../img/backgrounds/bg_parallax_5_op.jpg");}
+.bgimg-6 {background-image: url("../img/backgrounds/bg_parallax_6_op.jpg");}
 
 .side-img {min-height: 35em;}
 
@@ -320,6 +320,50 @@ article h1 {
 	font-size: 1em;
 	font-weight: bolder;
 }
+.cv {
+	position: fixed;
+	top: 90%;
+	/*left: 90%;*/
+	right: 1.5em;
+}
+.cv a {
+	text-decoration: none;
+	padding: 1em;
+	background-color: dodgerblue;
+	color: #fff;
+	border-radius: 3em;
+	font-variant: small-caps;
+	font-weight: bolder;
+}
+.down-icon {
+	width: 1.5em;
+	vertical-align: middle;
+	filter: invert(80);
+}
+.footer {
+	width: 100%;
+	height: 10em;
+	background-image: url("../img/backgrounds/bg_parallax_1_op.jpg");	
+}
+
+.footer-social-items {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+}
+.footer-social-item {
+	margin: 1em;
+}
+.d-icon {width: 4em;}
+.footer-note {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bolder;
+	color: #fff;
+}
+
 @keyframes zoom-in-out {
   0% {transform: scale(1.05);}
   20% {transform: scale(1.075);}
