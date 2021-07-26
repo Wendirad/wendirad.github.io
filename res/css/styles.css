@@ -52,7 +52,6 @@ html {scroll-behavior: smooth;}
 	background-image: url("../img/backgrounds/main_bg_01.jpg");
 	text-align: center;
 }
-
 .header {
 	display: flex;
 	justify-content: center;
@@ -114,7 +113,6 @@ html {scroll-behavior: smooth;}
 	padding: .2em;
   background: url("../img/backgrounds/552581.jpg");
 	background-size: cover;
-	
 }
 
 .nav-items-scroll {
@@ -168,6 +166,40 @@ html {scroll-behavior: smooth;}
 }
 .social-item:first-child {border-top-left-radius: 1rem;}
 .social-item:last-child {border-bottom-left-radius: 1rem;}
+
+article {
+	line-height: 2.5em;
+	color: #999;
+	margin:3em 4em;
+	margin-top: 5em;
+	padding: 2em;
+	border-radius: 1em;
+	text-align: justify;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 60vw;
+}
+article h1 {
+	font-size: 2em;
+	padding: .5em .25em;
+}
+
+
+.content {
+	display: flex;
+	flex-direction: row;
+}
+.about {
+	justify-content: flex-end;
+	background: url("../img/backgrounds/bg_paradox_1_op.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.about article {background: url("../img/backgrounds/main_bg_02.jpg");}
+
+.education {
+	justify-content: flex-end;
+}
 
 .bg-img {background-attachment: scroll;}
 
