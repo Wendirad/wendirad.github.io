@@ -51,8 +51,7 @@ html {scroll-behavior: smooth;}
 	flex-direction: column;
 	justify-content: center;
 	background-color: #000000;
-	background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
-	/*background-image: url("../img/backgrounds/main_bg_01.jpg");*/
+	background-image: url("../img/backgrounds/bg_parallax_1_op.jpg");
 	text-align: center;
 }
 .header {
@@ -171,42 +170,58 @@ html {scroll-behavior: smooth;}
 .social-item:last-child {border-bottom-left-radius: 1rem;}
 
 article {
-	line-height: 2.5em;
+	line-height: 2em;
 	color: #999;
-	margin:3em 4em;
-	margin-top: 5em;
-	padding: 2em;
-	border-radius: 1em;
+	margin: .25em .25em;
+	padding: 1em;
 	text-align: justify;
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 60vw;
 	font-family: "courier";
-	font-weight: bold;
+	font-weight: 800;
 }
 article h1 {
 	font-size: 2em;
 	padding: .5em .25em;
+	color: #000;
 }
 .content {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
-.about {
-	background: url("../img/backgrounds/bg_paradox_1_op.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.about article {background: url("../img/backgrounds/main_bg_02.jpg");}
-
-.about {
-	background: url("../img/backgrounds/bg_paradox_1_op.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.about article {background: url("../img/backgrounds/main_bg_02.jpg");}
-
 .bg-img {background-attachment: scroll;}
+[class*="bgimg-"] {min-height: 100%;}
+.bgimg-1 {background-image: url("../img/backgrounds/bg_parallax_1_op.jpg");}
+.bgimg-2 {background-image: url("../img/backgrounds/bg_parallax_2_op.jpeg");}
+.bgimg-3 {background-image: url("../img/backgrounds/bg_parallax_3_op.jpg");}
+.bgimg-4 {background-image: url("../img/backgrounds/bg_parallax_4_op.jpeg");}
+
+.side-img {min-height: 35em;}
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+.logo {width: 1em;}
+.small {
+	margin-left: 1em;
+	color: #000;
+}
+.experience h3 {color: #444;}
+.experience .side-img {min-height: 37em;}
+.experience ul {list-style-type: circle;margin-left: 2em;}
+
+.skills h4 {color: #000;}
+.skills li div {color: #545454;}
+.skills ul {
+	margin-left: 1em;
+}
+.skills ul li {
+	margin-left: 1em;
+}
 
 @keyframes zoom-in-out {
   0% {transform: scale(1.05);}
@@ -216,12 +231,6 @@ article h1 {
   80% {transform: scale(1.05);}
   100% {transform: scale(1.0);}
 }
-
-[class*="bgimg-"]{min-height: 400px;}
-
-.bgimg-1 {background-image: url("../img/backgrounds/bg_paradox_1.jpg");}
-.bgimg-2 {background-image: url("../img/backgrounds/images.jpeg");}
-.bgimg-3 {background-image: url("../img/backgrounds/gojo.jpeg");}
 
 /* Small devices (portrait tablets and large phones, 612px and up) */
 @media only screen and (min-width: 612px) {
@@ -315,8 +324,12 @@ article h1 {
 	  background-repeat: no-repeat;
 	  background-size: cover
 	}
-	.top-header {
-		opacity: unset;
+	.top-header {opacity: unset;}
+	article {
+		margin:3em 4em;
+		margin-top: 5em;
+		padding: 2em;
+		width: 60vw;
 	}
 }
 
